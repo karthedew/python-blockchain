@@ -7,8 +7,8 @@ This blockchain was initially created from a [Hackernoon tutorial](https://hacke
 # Use
 1. In order to use the code, you have to startup the blockchain server using the typical command:
 
-```python
-python blockchain.py
+```
+$ python blockchain.py
 ```
 
 2. Install [Postman](https://www.getpostman.com/)
