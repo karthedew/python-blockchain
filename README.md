@@ -7,6 +7,6 @@ This blockchain was initially created from a [Hackernoon tutorial](https://hacke
 # Use
 In order to use the code, you have to startup the blockchain server using the typical command:
 
-`python blockchain.py`
+`$ python blockchain.py`
 
 # Notes:
