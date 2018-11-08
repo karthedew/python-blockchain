@@ -15,4 +15,4 @@ $ python blockchain.py
 
 # Notes:
 
-- This project is still in development and is not ready for use.
+ - none
