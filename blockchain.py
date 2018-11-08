@@ -9,7 +9,7 @@ import json
 from time     import time
 from uuid     import uuid4
 from textwrap import dedent
-from flask    import flask, jsonify, request
+from flask    import Flask, jsonify, request
 
 class Blockchain(object):
 
@@ -66,26 +66,26 @@ class Blockchain(object):
 
         return self.last_block['index'] + 1
     
-        def proof_of_work(self, last_proof):
+    def proof_of_work(self, last_proof):
         """
         Simple Proof of Work Algorithm:
-          - Find a number p' such that hash(pp') contains leading 4 zeroes, where p is the prvious p'
-          - p is the previous proof, and p' is the new proof
-
+        - Find a number p' such that hash(pp') contains leading 4 zeroes, where p is the prvious p'
+        - p is the previous proof, and p' is the new proof
+    
         :param last_proof: <int>
         :return: <int>
-
+    
         """
 
         proof = 0
         while self.valid_proof(last_proof, proof) is False:
             proof += 1
         
-    return proof
+        return proof
 
     @property
     def last_block(self):
-        # Returns the last Block in the chain
+        return self.chain[-1]
     
     @staticmethod
     def hash(block):
@@ -102,7 +102,7 @@ class Blockchain(object):
         return hashlib.sha256(block_string).hexdigest()
 
 # Instantiate our Node
-app = flask(__name__)
+app = Flask(__name__)
 
 # Generate a globally unique address for this node
 node_identifier = str(uuid4()).replace('-', '')
